@@ -20,7 +20,11 @@
       "Bash(git push:*)",
       "Bash(mkdir:*)",
       "Bash(git rm:*)",
-      "Bash(\"C:\\Users\\Soren\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" train_agent.py --timesteps 10000)"
+      "Bash(\"C:\\Users\\Soren\\AppData\\Local\\Programs\\Python\\Python312\\python.exe\" train_agent.py --timesteps 10000)",
+      "Bash(where /r . train_agent.py)",
+      "Bash(curl:*)",
+      "Bash(powershell:*)",
+      "Bash(taskkill:*)"
     ],
     "deny": [],
     "ask": []

@@ -5,11 +5,12 @@ gym>=0.26.0
 numpy>=1.23.0
 pygame>=2.5.0
 
-# Model Export
+# Model Export (optional - only needed for model conversion)
 onnx>=1.14.0
-onnx2tf>=1.17.0
-tensorflow>=2.13.0
-tensorflowjs>=4.10.0
+# Commented out to avoid conflicts - install separately if needed for model export:
+# tensorflow~=2.15.0
+# tensorflowjs>=4.10.0
+# onnx2tf>=1.17.0
 
 # Utilities
 matplotlib>=3.7.0

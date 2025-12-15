@@ -1,0 +1,28 @@
+# Build tools (required for Python 3.13 compatibility)
+setuptools>=65.5.1
+
+# FastAPI and server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+pydantic>=2.5.3
+python-multipart>=0.0.6
+
+# PyTorch (CPU version for Railway) - pinned for stability
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.9.1+cpu
+
+# Transformers for NLP
+transformers>=4.40.0
+
+# Data processing - pinned versions (Python 3.13 compatible)
+numpy>=2.0.0
+pandas>=2.2.0
+scikit-learn>=1.5.0
+Pillow>=10.2.0
+
+# Utilities - pinned versions
+python-dotenv==1.0.0
+
+# Authentication
+bcrypt==4.1.2
+PyJWT==2.8.0

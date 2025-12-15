@@ -69,7 +69,9 @@ export default function GameCanvas({ onGameEnd, enableAI = false, episodeModelPa
     lastTime: 0,
     animationFrame: null,
     startTime: 0,
-    elapsedTime: 0
+    elapsedTime: 0,
+    countdown: null, // Countdown value (3, 2, 1) or null when done
+    countdownStartTime: null // When countdown started
   })
 
   useEffect(() => {
@@ -105,23 +107,28 @@ export default function GameCanvas({ onGameEnd, enableAI = false, episodeModelPa
       console.log('\n🤖 ═══════════ AI INITIALIZATION STARTED ═══════════')
       console.log('[AI-INIT] Creating separate AI game instance...')
       console.log('[AI-INIT] AI will run in isolated environment')
-      console.log('[AI-INIT] AI will use same map (seed:', game.mapSeed, ')')
+      console.log('[AI-INIT] AI will use identical map instance (seed:', game.mapSeed, ')')
       console.log('[AI-INIT] Model path:', modelPath)
 
       updateAiStatus('loading')
       setLoadingProgress(0)
       setLoadingMessage('Initializing AI...')
 
-      // Create separate map for AI using same seed
-      const aiMapGen = new MapGenerator(1920, 1080, 32)
-      const aiMap = aiMapGen.generateMap(game.mapSeed, difficulty)
+      // Use the same map instance for AI (ensures identical layout for fair race)
+      // No need to regenerate - player and AI share the exact same platforms
+      const aiMap = game.map
 
       // Create AI instance with callbacks for status updates
       const onAIReady = () => {
         console.log('✅ [AI-READY] AI opponent loaded and ready!')
         updateAiStatus('ready')
         setLoadingProgress(100)
-        setLoadingMessage('AI Ready!')
+        setLoadingMessage('Get Ready!')
+
+        // Start countdown after AI is ready
+        console.log('[COUNTDOWN] Starting 3... 2... 1... countdown')
+        game.countdown = 3
+        game.countdownStartTime = performance.now()
       }
 
       const onAIError = (errorMsg) => {
@@ -137,6 +144,8 @@ export default function GameCanvas({ onGameEnd, enableAI = false, episodeModelPa
     } else {
       console.log('[AI-INIT] AI disabled by user, skipping initialization')
       updateAiStatus('disabled')
+      // No countdown needed when playing solo
+      game.countdown = null
     }
 
     // Clear all keys helper
@@ -228,6 +237,52 @@ export default function GameCanvas({ onGameEnd, enableAI = false, episodeModelPa
 
       // Skip first frame entirely if deltaTime is 0 (initialization frame)
       if (deltaTime === 0) {
+        game.animationFrame = requestAnimationFrame(gameLoop)
+        return
+      }
+
+      // Handle countdown (when AI is ready and game hasn't started yet)
+      if (game.countdown !== null) {
+        const countdownElapsed = (timestamp - game.countdownStartTime) / 1000
+        const newCountdown = Math.max(0, 3 - Math.floor(countdownElapsed))
+
+        if (newCountdown !== game.countdown) {
+          game.countdown = newCountdown
+          console.log('[COUNTDOWN]', game.countdown || 'GO!')
+        }
+
+        // Render static scene with countdown overlay
+        renderGame(ctx, game)
+
+        // Draw countdown overlay
+        ctx.save()
+        ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+        ctx.fillStyle = '#FFD700'
+        ctx.font = 'bold 120px Arial'
+        ctx.textAlign = 'center'
+        ctx.textBaseline = 'middle'
+
+        const countdownText = game.countdown > 0 ? game.countdown.toString() : 'GO!'
+        ctx.fillText(countdownText, canvas.width / 2, canvas.height / 2)
+
+        // Add stroke for better visibility
+        ctx.strokeStyle = '#000'
+        ctx.lineWidth = 4
+        ctx.strokeText(countdownText, canvas.width / 2, canvas.height / 2)
+
+        ctx.restore()
+
+        // When countdown reaches 0 and has shown "GO!" for 1 second, start the game
+        if (game.countdown === 0 && countdownElapsed >= 4) {
+          console.log('[COUNTDOWN] Finished! Starting game...')
+          game.countdown = null
+          game.countdownStartTime = null
+          game.startTime = timestamp // Reset start time for accurate game timer
+          game.lastTime = timestamp
+        }
+
         game.animationFrame = requestAnimationFrame(gameLoop)
         return
       }
