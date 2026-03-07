@@ -54,10 +54,10 @@ class PlatformerEnv(gym.Env):
         self.display_surface = pygame.Surface((render_width, render_height))
         self.observation_surface = pygame.Surface((observation_width, observation_height))
 
-        # Observation space: 84x84x3 RGB image
+        # Observation space: 84x84x1 Grayscale image (faster training, less data)
         self.observation_space = spaces.Box(
             low=0, high=255,
-            shape=(observation_height, observation_width, 3),
+            shape=(observation_height, observation_width, 1),
             dtype=np.uint8
         )
 
@@ -76,6 +76,8 @@ class PlatformerEnv(gym.Env):
         self.steps = 0
         self.max_steps = 5000  # Timeout per episode
         self.last_x = 0  # For progress reward
+        self.steps_without_progress = 0  # Track steps without moving right
+        self.touched_platforms = set()  # Track which platforms have been touched
         self.done = False
 
         # Frame capture
@@ -121,6 +123,8 @@ class PlatformerEnv(gym.Env):
         # Reset tracking variables
         self.steps = 0
         self.last_x = self.player.x
+        self.steps_without_progress = 0
+        self.touched_platforms = set()
         self.camera_x = 0
         self.done = False
 
@@ -253,7 +257,14 @@ class PlatformerEnv(gym.Env):
 
         # Draw platforms
         for platform in self.map_data['platforms']:
-            color = (139, 69, 19) if platform['type'] == 'ground' else (46, 139, 87)
+            # Match frontend colors exactly
+            if platform['type'] == 'ground':
+                color = (139, 69, 19)  # Brown - #8B4513
+            elif platform['type'] == 'ice':
+                color = (77, 166, 255)  # Light blue - #4DA6FF
+            else:
+                color = (46, 139, 87)   # Green - #2E8B57
+
             pygame.draw.rect(
                 self.display_surface,
                 color,
@@ -292,7 +303,7 @@ class PlatformerEnv(gym.Env):
         # Draw player
         pygame.draw.rect(
             self.display_surface,
-            (255, 255, 255),  # White
+            (255, 107, 107),  # Red - matches AI color in frontend (#FF6B6B)
             (self.player.x - self.camera_x, self.player.y,
              self.player.width, self.player.height)
         )
@@ -308,10 +319,10 @@ class PlatformerEnv(gym.Env):
     def _get_observation(self):
         """
         Get current visual observation for the agent.
-        Returns a downscaled version of the game screen.
+        Returns a downscaled grayscale version of the game screen.
 
         Returns:
-            numpy array of shape (84, 84, 3)
+            numpy array of shape (84, 84, 1) - grayscale
         """
         # Render full resolution
         rgb_array = self.render(mode='rgb_array')
@@ -329,13 +340,20 @@ class PlatformerEnv(gym.Env):
             self.observation_surface
         )
 
-        # Convert back to numpy
-        obs = np.transpose(
+        # Convert back to numpy (RGB)
+        obs_rgb = np.transpose(
             pygame.surfarray.array3d(self.observation_surface),
             axes=(1, 0, 2)
         )
 
-        return obs.astype(np.uint8)
+        # Convert RGB to grayscale using standard luminosity formula
+        # Gray = 0.299*R + 0.587*G + 0.114*B
+        obs_gray = np.dot(obs_rgb[...,:3], [0.299, 0.587, 0.114])
+
+        # Add channel dimension (84, 84) -> (84, 84, 1)
+        obs_gray = np.expand_dims(obs_gray, axis=-1)
+
+        return obs_gray.astype(np.uint8)
 
     def _calculate_reward(self):
         """
@@ -349,14 +367,55 @@ class PlatformerEnv(gym.Env):
         # Progress reward (encourage moving right)
         distance_delta = self.player.x - self.last_x
         reward += distance_delta * self.reward_weights['progress']
+
+        # Penalty for moving left
+        if distance_delta < 0:
+            # Player moved left, apply penalty per pixel
+            reward += distance_delta * 0.5  # Negative delta * positive multiplier = negative reward
+
+        # Track steps without rightward progress
+        if distance_delta > 0:
+            # Player moved right, reset counter
+            self.steps_without_progress = 0
+        else:
+            # Player didn't move right, increment counter
+            self.steps_without_progress += 1
+
+        # Apply penalty if no progress for 50 steps
+        if self.steps_without_progress >= 50:
+            reward -= 100.0
+            self.steps_without_progress = 0  # Reset counter after penalty
+
+        # New platform reward (encourage exploring different platforms)
+        for platform in self.map_data['platforms']:
+            # Check if player is standing on this platform
+            player_bottom = self.player.y + self.player.height
+            platform_top = platform['y']
+
+            # Player is on platform if:
+            # - Player's feet are near platform top (within 10 pixels)
+            # - Player's x position overlaps with platform
+            if (abs(player_bottom - platform_top) < 10 and
+                self.player.x + self.player.width > platform['x'] and
+                self.player.x < platform['x'] + platform['width']):
+
+                # Use platform position as unique ID
+                platform_id = (platform['x'], platform['y'])
+
+                # Award points if this is a new platform
+                if platform_id not in self.touched_platforms:
+                    self.touched_platforms.add(platform_id)
+                    reward += 10.0
+                break  # Only standing on one platform at a time
+
         self.last_x = self.player.x
 
         # Coin collection (score tracks this)
         # Coins add 10 to score when collected
         # We give reward based on score change
 
-        # Time penalty (encourage efficiency)
-        reward += self.reward_weights['time']
+        # REMOVED: Time penalty was punishing AIs that survive longer
+        # The "no progress for 50 steps" penalty handles stuck agents better
 
         # Goal reached (big reward)
         if self.player.checkGoalReached(self.map_data['goal']):

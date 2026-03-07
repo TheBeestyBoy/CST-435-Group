@@ -297,10 +297,15 @@ class AIPlayer {
       // Resize to model input size (84x84)
       tensor = tf.image.resizeBilinear(tensor, [84, 84])
 
+      // Convert RGB to grayscale using luminosity formula
+      // Gray = 0.299*R + 0.587*G + 0.114*B
+      const weights = tf.tensor1d([0.299, 0.587, 0.114])
+      tensor = tf.sum(tensor.mul(weights), -1, true)
+
       // Normalize to [0, 1]
       tensor = tensor.div(255.0)
 
-      // Add batch dimension [1, 84, 84, 3]
+      // Add batch dimension [1, 84, 84, 1]
       tensor = tensor.expandDims(0)
 
       return tensor
@@ -348,8 +353,8 @@ class AIPlayer {
     const resizedData = tempCtx.getImageData(0, 0, 84, 84)
     const pixels = resizedData.data
 
-    // Convert to CHW format: [1, 3, 84, 84]
-    const input = new Float32Array(1 * 3 * 84 * 84)
+    // Convert to grayscale CHW format: [1, 1, 84, 84]
+    const input = new Float32Array(1 * 1 * 84 * 84)
 
     for (let i = 0; i < 84; i++) {
       for (let j = 0; j < 84; j++) {
@@ -358,14 +363,16 @@ class AIPlayer {
         const g = pixels[idx + 1] / 255.0
         const b = pixels[idx + 2] / 255.0
 
-        // HWC → CHW conversion
-        input[0 * 84 * 84 + i * 84 + j] = r  // Red channel
-        input[1 * 84 * 84 + i * 84 + j] = g  // Green channel
-        input[2 * 84 * 84 + i * 84 + j] = b  // Blue channel
+        // Convert RGB to grayscale using luminosity formula
+        // Gray = 0.299*R + 0.587*G + 0.114*B
+        const gray = 0.299 * r + 0.587 * g + 0.114 * b
+
+        // Single grayscale channel
+        input[i * 84 + j] = gray
       }
     }
 
-    return new ort.Tensor('float32', input, [1, 3, 84, 84])
+    return new ort.Tensor('float32', input, [1, 1, 84, 84])
   }
 
   /**

@@ -1,0 +1,897 @@
+[
+  {
+    "timestamp": "2025-12-14T03:47:34.570806",
+    "type": "user_registered",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc"
+  },
+  {
+    "timestamp": "2025-12-14T18:46:08.495644",
+    "type": "user_login",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc"
+  },
+  {
+    "timestamp": "2025-12-14T20:59:16.122620",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "2c3b1cc1-e86f-4f90-a4a1-d94713109ec9"
+  },
+  {
+    "timestamp": "2025-12-14T20:59:16.138659",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 4.1,
+    "score": 10,
+    "distance": 1019,
+    "difficulty": "easy",
+    "reason": "non_sequential_frames",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T20:59:27.283005",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "c1444d6a-a50d-4261-b171-d6c1ff034427"
+  },
+  {
+    "timestamp": "2025-12-14T20:59:27.313060",
+    "type": "score_created",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "time": 8.0,
+    "score": 70,
+    "distance": 2740
+  },
+  {
+    "timestamp": "2025-12-14T21:06:06.645257",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "23e466ca-9bc4-4d8f-a173-8a5f3bbffdb3"
+  },
+  {
+    "timestamp": "2025-12-14T21:06:06.666834",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 3.7,
+    "score": 0,
+    "distance": 664,
+    "difficulty": "easy",
+    "reason": "non_sequential_frames",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:06:25.802572",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "a3714e36-f07b-4b09-a256-67b1d6e0cc58"
+  },
+  {
+    "timestamp": "2025-12-14T21:06:25.824129",
+    "type": "suspicious_score_flagged",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.7,
+    "score": 10,
+    "distance": 659,
+    "difficulty": "easy",
+    "reason": "impossible_improvement_rate"
+  },
+  {
+    "timestamp": "2025-12-14T21:06:25.834648",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.7,
+    "previous_time": 8.0,
+    "score": 10,
+    "distance": 659
+  },
+  {
+    "timestamp": "2025-12-14T21:06:32.467275",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "0df7a8b4-7102-4271-aed7-179248bd1604"
+  },
+  {
+    "timestamp": "2025-12-14T21:06:32.494857",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.6,
+    "previous_time": 1.7,
+    "score": 10,
+    "distance": 592
+  },
+  {
+    "timestamp": "2025-12-14T21:06:36.390023",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "38331841-f421-4cba-9e84-71b4c7829838"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:35.339695",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "3b7e3f3c-caf1-499a-8e6e-490d161da159"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:35.376315",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 5.7,
+    "score": 0,
+    "distance": 1110,
+    "difficulty": "easy",
+    "reason": "non_sequential_frames",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:47.656048",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "281e8904-fc2a-462e-8513-2bec361a2c8f"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:47.679085",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 5.1,
+    "score": 10,
+    "distance": 981,
+    "difficulty": "easy",
+    "reason": "non_sequential_frames",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:55.913007",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b569c91f-f278-4dcc-b2b6-5e2b1a7b9bc4"
+  },
+  {
+    "timestamp": "2025-12-14T21:08:55.937560",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 6.6,
+    "score": 0,
+    "distance": 1598,
+    "difficulty": "easy",
+    "reason": "non_sequential_frames",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:09:06.741827",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "4143c21a-46f8-4f64-a9b7-95bc44cd5ee1"
+  },
+  {
+    "timestamp": "2025-12-14T21:09:18.074109",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "bd47a048-6898-454f-b92f-e56965053066"
+  },
+  {
+    "timestamp": "2025-12-14T21:09:41.594284",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "dda58313-4da6-4f33-8b9d-6f69919f38f3"
+  },
+  {
+    "timestamp": "2025-12-14T21:09:55.514141",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b7f277a9-8255-43a5-b6a3-f4c3cd27e10e"
+  },
+  {
+    "timestamp": "2025-12-14T21:10:04.622522",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "8909ffc0-990e-4b22-86be-209fed221a83"
+  },
+  {
+    "timestamp": "2025-12-14T21:10:13.941651",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "08d28bcd-95f2-47b8-93c8-768f8da7fe81"
+  },
+  {
+    "timestamp": "2025-12-14T21:10:28.802726",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "22c2183c-7a38-4c06-ad0e-47da1002f041"
+  },
+  {
+    "timestamp": "2025-12-14T21:10:36.473566",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "d78defbc-5db0-4161-9e41-144c317be769"
+  },
+  {
+    "timestamp": "2025-12-14T21:11:24.472345",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "93d808f0-24e0-4205-b753-ca0751582a07"
+  },
+  {
+    "timestamp": "2025-12-14T21:11:24.494929",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.4,
+    "previous_time": 1.6,
+    "score": 0,
+    "distance": 532
+  },
+  {
+    "timestamp": "2025-12-14T21:12:47.605730",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "5c5f31e0-6028-4bca-ab87-93e4b67147f1"
+  },
+  {
+    "timestamp": "2025-12-14T21:23:28.205164",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "0b325827-925d-41cb-ac69-9f7c845667ea"
+  },
+  {
+    "timestamp": "2025-12-14T21:23:37.190199",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "bcf5671a-8149-4501-8adf-4155bafe87c0"
+  },
+  {
+    "timestamp": "2025-12-14T21:23:54.107407",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "1cc151d4-1f73-4807-b447-2c5e0b2f9430"
+  },
+  {
+    "timestamp": "2025-12-14T21:23:54.127459",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.4,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:24:02.905039",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "1209483e-47ee-4f45-a846-5de555f5884e"
+  },
+  {
+    "timestamp": "2025-12-14T21:24:02.927216",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 2.6,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:37.061881",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "d0ba8a1a-fa68-4121-987a-c1ef6bf61845"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:37.083430",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.4,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:48.156440",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "402c2edf-702f-46eb-93df-31884bc47483"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:48.180487",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 4.3,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:56.823952",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "9192f6c6-7c77-4dac-b28b-c02147f997a9"
+  },
+  {
+    "timestamp": "2025-12-14T21:27:56.847001",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.4,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:28:04.153407",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "2331fe3f-1603-41d5-a6e6-dfcf36f7bffd"
+  },
+  {
+    "timestamp": "2025-12-14T21:28:04.175454",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.4,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:28:17.260003",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "60524048-5c28-4c42-bb6c-9dd7763bbfc3"
+  },
+  {
+    "timestamp": "2025-12-14T21:28:17.286090",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 6.2,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:28:41.970976",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "4cc2b7e6-5a5e-4ef8-add1-66b3c24a3e7b"
+  },
+  {
+    "timestamp": "2025-12-14T21:31:10.067004",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "80523f5e-f75f-4164-9fa2-87f557db61db"
+  },
+  {
+    "timestamp": "2025-12-14T21:31:10.092558",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 4.4,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T21:33:03.991606",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "1f37f150-220c-4437-a79d-f69766ed1c97"
+  },
+  {
+    "timestamp": "2025-12-14T21:33:33.794835",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "d47db97a-7add-4e78-8d4f-d405d80cf07f"
+  },
+  {
+    "timestamp": "2025-12-14T21:33:43.789793",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "7826b276-1593-485e-98f4-618f7db46825"
+  },
+  {
+    "timestamp": "2025-12-14T21:33:51.935266",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "14651cde-5a9a-49b5-a046-bdd73ccefb42"
+  },
+  {
+    "timestamp": "2025-12-14T21:34:15.382070",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "818c2b32-3f0c-4ef0-9d7f-7a021fa2146c"
+  },
+  {
+    "timestamp": "2025-12-14T21:34:24.794074",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "1a0df659-9666-435e-a146-b5a574abbe19"
+  },
+  {
+    "timestamp": "2025-12-14T21:34:35.095110",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "f21bbfad-a10e-4a96-8008-8a9fad6e8f0b"
+  },
+  {
+    "timestamp": "2025-12-14T21:35:52.280855",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "4ac9edfd-b43d-4023-9cc4-a059095d9bb2"
+  },
+  {
+    "timestamp": "2025-12-14T21:36:10.191770",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "fd9523aa-54c8-4de2-bbbe-e6c52145d444"
+  },
+  {
+    "timestamp": "2025-12-14T21:36:24.886800",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "66a44641-f936-4a75-af5f-9f0cc68da5fa"
+  },
+  {
+    "timestamp": "2025-12-14T21:36:36.223869",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "db39c848-c36e-4290-8586-a94e276473b1"
+  },
+  {
+    "timestamp": "2025-12-14T21:36:46.164588",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "dc208caa-b481-4a7e-b6b1-ff86a1cd8084"
+  },
+  {
+    "timestamp": "2025-12-14T21:36:55.331144",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "9c4f83e9-abae-42ef-8983-4fc24e91130a"
+  },
+  {
+    "timestamp": "2025-12-14T21:37:07.661352",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "70a3ae10-961d-43df-9cdf-bf723379c32b"
+  },
+  {
+    "timestamp": "2025-12-14T21:37:52.075491",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "0a095866-2a4b-46bd-a068-bdb965f79316"
+  },
+  {
+    "timestamp": "2025-12-14T21:38:16.100044",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "8dc5c11f-e6ee-4062-a769-fe8ac1631aac"
+  },
+  {
+    "timestamp": "2025-12-14T21:38:26.448131",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "e1964509-2589-4414-a916-8eb4f362232c"
+  },
+  {
+    "timestamp": "2025-12-14T22:06:28.896484",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "719a9183-f3e7-478b-9252-22976e9f603f"
+  },
+  {
+    "timestamp": "2025-12-14T22:06:28.923662",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.4,
+    "score": 0,
+    "distance": 217,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-14T22:06:38.485575",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "24206a01-3d46-490e-853d-6afe779a93ea"
+  },
+  {
+    "timestamp": "2025-12-14T22:22:21.621231",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "1d4084f8-9f7f-4f3e-875d-74fbd4ee28b9"
+  },
+  {
+    "timestamp": "2025-12-14T22:22:40.407143",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "7a959284-65cb-43bb-a5ef-981bdc51dd35"
+  },
+  {
+    "timestamp": "2025-12-14T22:26:53.981100",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "cbec902f-0a22-4409-a861-a6f400adba92"
+  },
+  {
+    "timestamp": "2025-12-14T22:33:33.284047",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "e4920d1f-442b-4788-8402-ed2855f97396"
+  },
+  {
+    "timestamp": "2025-12-14T22:33:33.312046",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.2,
+    "previous_time": 1.4,
+    "score": 0,
+    "distance": 517
+  },
+  {
+    "timestamp": "2025-12-14T22:33:41.341063",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "cb767284-82b6-4839-957f-df3b46814065"
+  },
+  {
+    "timestamp": "2025-12-14T22:33:49.289384",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "03778448-e5da-4a39-b903-cfb3ea745a24"
+  },
+  {
+    "timestamp": "2025-12-14T22:33:49.315393",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.2,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-15T02:41:39.155635",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "79c44daa-6744-4704-b738-a7c775636664"
+  },
+  {
+    "timestamp": "2025-12-15T02:41:48.762071",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "2e1e8a02-73d3-4c0f-b422-77d60fcf3ee6"
+  },
+  {
+    "timestamp": "2025-12-15T02:42:02.808509",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "48611df3-8ccf-4a7b-b259-03d0326e7854"
+  },
+  {
+    "timestamp": "2025-12-15T02:42:17.604685",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b01554c2-ef82-4afd-b0b9-388f26b1b508"
+  },
+  {
+    "timestamp": "2025-12-15T03:04:46.484211",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b13266d2-9eed-4735-a329-905028989d05"
+  },
+  {
+    "timestamp": "2025-12-15T03:05:04.770243",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "beaca750-7d03-4ff4-a149-d0524abc5189"
+  },
+  {
+    "timestamp": "2025-12-15T03:05:12.649035",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "9eb246e1-52a9-4310-9456-4958dc01e327"
+  },
+  {
+    "timestamp": "2025-12-15T05:02:37.181204",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "c9b49495-1a54-4c6d-8a01-7630c84ca7ab"
+  },
+  {
+    "timestamp": "2025-12-15T05:02:37.208203",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.1,
+    "previous_time": 1.2,
+    "score": 0,
+    "distance": 480
+  },
+  {
+    "timestamp": "2025-12-15T05:02:44.674935",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b80cb98f-636d-4f67-a854-6f9987ad041b"
+  },
+  {
+    "timestamp": "2025-12-15T05:02:44.696939",
+    "type": "invalid_score_rejected",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "time": 1.0,
+    "score": 0,
+    "distance": 180,
+    "difficulty": "easy",
+    "reason": "insufficient_forward_progress",
+    "validation_type": "gameplay_recording"
+  },
+  {
+    "timestamp": "2025-12-15T05:03:32.809814",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "c60896f6-b46c-4c03-be28-342aa41f0ca5"
+  },
+  {
+    "timestamp": "2025-12-15T05:03:32.837326",
+    "type": "score_updated",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "username": "test",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "difficulty": "easy",
+    "new_time": 1.0,
+    "previous_time": 1.1,
+    "score": 0,
+    "distance": 367
+  },
+  {
+    "timestamp": "2025-12-15T05:03:50.281196",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b5c74362-71d1-4d5c-895e-169eb1702dd2"
+  },
+  {
+    "timestamp": "2025-12-15T05:04:15.543933",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "a07bdaa3-78a5-49ad-b35d-a55214a82616"
+  },
+  {
+    "timestamp": "2025-12-15T06:35:59.810478",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "b73b83bf-8f70-4fda-9982-20a77cf575d4"
+  },
+  {
+    "timestamp": "2025-12-15T06:36:29.555208",
+    "type": "game_completed",
+    "ip": "127.0.0.1",
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+    "user_id": "a38f6e59-f047-478e-9826-fa9c3762acbc",
+    "token_id": "875ba486-494a-4953-9f60-9de3fd37f6c2"
+  }
+]

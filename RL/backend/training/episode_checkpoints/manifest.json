@@ -1,0 +1,82 @@
+[
+  {
+    "episode": 258,
+    "reward": 247.023125,
+    "length": 720,
+    "timestep": 34287,
+    "path": "episode_checkpoints/episode_00258_reward_247",
+    "timestamp": 1765772148.8463707
+  },
+  {
+    "episode": 329,
+    "reward": 279.423625,
+    "length": 1031,
+    "timestep": 44456,
+    "path": "episode_checkpoints/episode_00329_reward_279",
+    "timestamp": 1765773403.4677203
+  },
+  {
+    "episode": 488,
+    "reward": 221.945406,
+    "length": 722,
+    "timestep": 63459,
+    "path": "episode_checkpoints/episode_00488_reward_221",
+    "timestamp": 1765776085.5729647
+  },
+  {
+    "episode": 562,
+    "reward": 301.7,
+    "length": 882,
+    "timestep": 74227,
+    "path": "episode_checkpoints/episode_00562_reward_301",
+    "timestamp": 1765777418.9453733
+  },
+  {
+    "episode": 732,
+    "reward": 226.66425,
+    "length": 684,
+    "timestep": 95661,
+    "path": "episode_checkpoints/episode_00732_reward_226",
+    "timestamp": 1765780327.0282834
+  },
+  {
+    "episode": 771,
+    "reward": -33.75,
+    "length": 158,
+    "timestep": 100603,
+    "path": "episode_checkpoints/episode_00771_reward_-33",
+    "timestamp": 1765781011.5976913
+  },
+  {
+    "episode": 772,
+    "reward": -78.0,
+    "length": 80,
+    "timestep": 100683,
+    "path": "episode_checkpoints/episode_00772_reward_-78",
+    "timestamp": 1765781026.4919837
+  },
+  {
+    "episode": 773,
+    "reward": -79.75,
+    "length": 87,
+    "timestep": 100770,
+    "path": "episode_checkpoints/episode_00773_reward_-79",
+    "timestamp": 1765781041.8021858
+  },
+  {
+    "episode": 774,
+    "reward": -81.25,
+    "length": 79,
+    "timestep": 100849,
+    "path": "episode_checkpoints/episode_00774_reward_-81",
+    "timestamp": 1765781056.68524
+  },
+  {
+    "episode": 775,
+    "reward": -85.5,
+    "length": 79,
+    "timestep": 100928,
+    "path": "episode_checkpoints/episode_00775_reward_-85",
+    "timestamp": 1765781071.8201115
+  }
+]

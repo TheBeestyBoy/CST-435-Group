@@ -1156,7 +1156,7 @@ def export_model():
 
 @router.get("/checkpoints/episodes", summary="Get Episode Checkpoints")
 def get_episode_checkpoints():
-    """Get list of recent episode checkpoints (last 10)"""
+    """Get list of all episode checkpoints from current training session"""
     if not RL_BACKEND_PATH:
         raise HTTPException(status_code=500, detail="RL backend path not found")
 
@@ -1172,15 +1172,16 @@ def get_episode_checkpoints():
         with open(manifest_path, 'r') as f:
             checkpoints = json.load(f)
 
-        # Find the best model (highest reward)
+        # Find the best model (highest reward) from entire training session
         best_model = max(checkpoints, key=lambda x: x['reward']) if checkpoints else None
 
-        # Get 10 most recent episodes sorted by episode number (newest first)
-        recent_checkpoints = sorted(checkpoints, key=lambda x: x['episode'], reverse=True)[:10]
+        # Get ALL episodes sorted by episode number (newest first)
+        # This allows users to see and play against the best model from the entire session
+        all_checkpoints = sorted(checkpoints, key=lambda x: x['episode'], reverse=True)
 
         return {
             "best_model": best_model,
-            "recent_checkpoints": recent_checkpoints,
+            "recent_checkpoints": all_checkpoints,  # Now includes all episodes, not just last 10
             "total_count": len(checkpoints)
         }
     except Exception as e:

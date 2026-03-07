@@ -7,12 +7,12 @@ uvicorn[standard]==0.27.0
 pydantic==2.5.3
 python-multipart==0.0.6
 
-# PyTorch (CPU version for Railway) - pinned for stability
+# PyTorch (CPU version for Railway) - updated for security (CVE-2025-32434)
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.3.1+cpu
+torch==2.6.0+cpu
 
-# Transformers for NLP - compatible with torch 2.1.2
-transformers==4.35.2
+# Transformers for NLP - updated for compatibility
+transformers==4.48.0
 
 # Data processing - pinned versions (Python 3.12 compatible)
 numpy==1.26.4

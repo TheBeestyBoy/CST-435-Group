@@ -89,22 +89,22 @@ def train_agent(total_timesteps=1_000_000, save_path="models/platformer_agent"):
     # Create PPO model with GPU support
     # policy_kwargs can be customized for deeper networks
     policy_kwargs = dict(
-        net_arch=dict(pi=[256, 256], vf=[256, 256])  # Larger networks for complex visual input
+        net_arch=dict(pi=[1024, 1024], vf=[1024, 1024])  # Quadrupled size for maximum learning capacity
     )
 
     model = PPO(
         "CnnPolicy",  # CNN policy for visual observations
         env,
-        learning_rate=3e-4,
-        n_steps=2048,
-        batch_size=64,
-        n_epochs=10,
+        learning_rate=1e-4,  # Reduced from 3e-4 for larger model stability
+        n_steps=4096,        # Increased from 2048 for better sample efficiency
+        batch_size=512,      # Increased from 64 to utilize GPU and stabilize gradients
+        n_epochs=8,          # Reduced from 10 to prevent overfitting with larger model
         gamma=0.99,
         gae_lambda=0.95,
         clip_range=0.2,
-        ent_coef=0.01,
+        ent_coef=0.005,      # Reduced from 0.01 - larger model needs less exploration bonus
         vf_coef=0.5,
-        max_grad_norm=0.5,
+        max_grad_norm=1.0,   # Increased from 0.5 - larger model can handle larger gradients
         policy_kwargs=policy_kwargs,
         verbose=1,
         device=device,  # Use CUDA if available!
@@ -112,7 +112,14 @@ def train_agent(total_timesteps=1_000_000, save_path="models/platformer_agent"):
     )
 
     print(f"\n[TRAINING] Model created. Training starting...")
-    print(f"[TRAINING] You can monitor progress in TensorBoard:")
+    print(f"[TRAINING] Hyperparameters optimized for 1024-neuron model:")
+    print(f"  - Learning Rate: 1e-4 (lower for stability)")
+    print(f"  - Batch Size: 512 (8x larger for GPU utilization)")
+    print(f"  - Steps per Update: 4096 (2x larger for sample efficiency)")
+    print(f"  - Epochs per Update: 8 (reduced to prevent overfitting)")
+    print(f"  - Entropy Coefficient: 0.005 (reduced exploration bonus)")
+    print(f"  - Max Gradient Norm: 1.0 (allows larger gradients)")
+    print(f"\n[TRAINING] You can monitor progress in TensorBoard:")
     print(f"[TRAINING]   tensorboard --logdir ./logs/")
 
     # Train the model
@@ -215,9 +222,10 @@ class ProgressCallback(BaseCallback):
         self.frame_buffer = []  # Rolling buffer of last 30 frames
         self.max_buffer_size = 30
 
-        # Episode checkpoint tracking (keep last 10)
+        # Episode checkpoint tracking (keep top 5 scores + last 5 recent = 10 total)
         self.episode_checkpoints = []  # List of dicts with episode info
-        self.max_checkpoints = 10
+        self.max_top_scores = 5  # Keep top 5 best scoring episodes
+        self.max_recent = 5      # Keep last 5 recent episodes
 
         # Create directories
         status_dir = os.path.dirname(status_file)
@@ -225,6 +233,12 @@ class ProgressCallback(BaseCallback):
             os.makedirs(status_dir, exist_ok=True)
         os.makedirs(frame_dir, exist_ok=True)
         os.makedirs('episode_checkpoints', exist_ok=True)
+
+        # Clear old manifest from previous training session
+        manifest_path = 'episode_checkpoints/manifest.json'
+        if os.path.exists(manifest_path):
+            print("[CHECKPOINT] Clearing old episode checkpoints from previous training session")
+            os.remove(manifest_path)
 
     def _on_step(self) -> bool:
         """Called at every environment step"""
@@ -331,23 +345,44 @@ class ProgressCallback(BaseCallback):
                     # Add to list
                     self.episode_checkpoints.append(checkpoint_info)
 
-                    # Keep only last 10 checkpoints
-                    if len(self.episode_checkpoints) > self.max_checkpoints:
-                        # Remove oldest checkpoint
-                        old_checkpoint = self.episode_checkpoints.pop(0)
-                        # Delete old checkpoint files
+                    # Smart checkpoint management: Keep top 5 scores + last 5 recent
+                    # This ensures we always have best models AND can see recent progress
+                    import shutil
+
+                    # Sort by reward (highest first) to get top 5 scores
+                    top_scores = sorted(self.episode_checkpoints, key=lambda x: x['reward'], reverse=True)[:self.max_top_scores]
+                    top_score_episodes = {cp['episode'] for cp in top_scores}
+
+                    # Sort by episode number (most recent first) to get last 5 recent
+                    recent_episodes = sorted(self.episode_checkpoints, key=lambda x: x['episode'], reverse=True)[:self.max_recent]
+                    recent_episode_numbers = {cp['episode'] for cp in recent_episodes}
+
+                    # Combine: episodes to KEEP (union of top scores and recent)
+                    episodes_to_keep = top_score_episodes | recent_episode_numbers
+
+                    # Find checkpoints to DELETE (not in keep set)
+                    checkpoints_to_delete = [cp for cp in self.episode_checkpoints if cp['episode'] not in episodes_to_keep]
+
+                    # Delete old checkpoint files
+                    for old_checkpoint in checkpoints_to_delete:
                         try:
-                            import shutil
+                            # Delete model file
                             if os.path.exists(old_checkpoint['path'] + '.zip'):
                                 os.remove(old_checkpoint['path'] + '.zip')
-                            # Also delete ONNX export
+                                if self.verbose > 0:
+                                    print(f"[CHECKPOINT] Deleted episode {old_checkpoint['episode']} (reward: {old_checkpoint['reward']:.1f})")
+
+                            # Delete ONNX export if exists
                             old_episode = old_checkpoint['episode']
                             old_onnx_dir = f'../models/episode_{old_episode}_onnx'
                             if os.path.exists(old_onnx_dir):
                                 shutil.rmtree(old_onnx_dir)
                         except Exception as e:
                             if self.verbose > 0:
-                                print(f"[CHECKPOINT] Warning: Failed to delete old checkpoint: {e}")
+                                print(f"[CHECKPOINT] Warning: Failed to delete checkpoint {old_checkpoint['episode']}: {e}")
+
+                    # Update checkpoint list to only keep the ones we want
+                    self.episode_checkpoints = [cp for cp in self.episode_checkpoints if cp['episode'] in episodes_to_keep]
 
                     # Save checkpoint manifest
                     with open('episode_checkpoints/manifest.json', 'w') as f:
@@ -355,6 +390,11 @@ class ProgressCallback(BaseCallback):
 
                     if self.verbose > 0:
                         print(f"[CHECKPOINT] Saved episode {episode_num} (reward: {ep_reward:.1f})")
+                        # Log checkpoint summary
+                        total_kept = len(self.episode_checkpoints)
+                        if total_kept > 0:
+                            top_rewards = sorted([cp['reward'] for cp in top_scores], reverse=True)
+                            print(f"[CHECKPOINT] Keeping {total_kept} checkpoints: Top 5 scores {top_rewards[:5]} + Last 5 episodes")
 
                 except Exception as e:
                     if self.verbose > 0:
